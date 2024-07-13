@@ -21,6 +21,7 @@ async function getSeries(): Promise<SeriesListRequest[]> {
     
   } catch (e: any) {
     console.log(e);
+    throw e
   }
 }
 

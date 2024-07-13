@@ -4,17 +4,23 @@ import { SeriesListRequest } from "../../interfaces";
 
 import "./SeriesList.scss";
 import SeriesCard from "../../components/seriesList/card/SeriesCard";
+import Loading from "../../components/loading/Loading";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    getSeries().then((data) => {
-      setSeries(data);
-    });
+    getSeries()
+      .then((data) => {
+        setSeries(data);
+      })
+      .catch(() => setError(true));
   }, []);
 
-  if (!series) return;
+  if (error) return <div>Something went wrong</div>;
+  if (!series) return <Loading />;
+
   return (
     <>
       <div className="lista">
