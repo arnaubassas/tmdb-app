@@ -5,10 +5,11 @@ import { SeriesListRequest } from "../../interfaces";
 import "./SeriesList.scss";
 import SeriesCard from "../../components/seriesList/card/SeriesCard";
 import Loading from "../../components/loading/Loading";
+import Error from "../../components/error/Error";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
 
   useEffect(() => {
     getSeries()
@@ -18,7 +19,7 @@ const SeriesList = () => {
       .catch(() => setError(true));
   }, []);
 
-  if (error) return <div>Something went wrong</div>;
+  if (error) return <Error />;
   if (!series) return <Loading />;
 
   return (
