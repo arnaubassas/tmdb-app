@@ -1,5 +1,5 @@
 
-export interface seriesList {
+export interface SeriesListRequest {
     adult: boolean;
     backdrop_path: string;
     genre_ids: number[];
@@ -14,4 +14,11 @@ export interface seriesList {
     name: string;
     vote_average: number;
     vote_count: number;
+}
+
+export interface CardListProps {
+    id: number;
+    name: string;
+    src: string;
+    date: string;
 }
