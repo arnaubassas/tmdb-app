@@ -1,0 +1,23 @@
+.seriesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+// @media (max-width: 800px) {
+//     .lista {
+//         grid-template-columns: repeat(4, 1fr);
+//     }
+// }
+
+// @media (max-width: 550px) {
+//     .lista {
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
+
+// @media (max-width: 400px) {
+//     .lista {
+//         grid-template-columns: repeat(2, 1fr);
+//     }
+// }
