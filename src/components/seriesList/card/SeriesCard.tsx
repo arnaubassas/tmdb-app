@@ -12,14 +12,14 @@ const SeriesCard: React.FC<SeriesCardProps> = ({ id, name, src, date }) => {
   const newdate = new Date(date);
 
   return (
-    <div className="container">
+    <div className="seriesCard">
       <img
         src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${src}`}
         alt="poster"
       />
-      <div className="information">
-        <div className="title">{name}</div>
-        <div className="date">
+      <div className="seriesCard__information">
+        <div className="seriesCard__information__title">{name}</div>
+        <div className="seriesCard__information__date">
           {newdate.toLocaleDateString(language, {
             day: "numeric",
             month: "short",

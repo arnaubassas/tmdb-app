@@ -9,7 +9,7 @@ import Error from "../../components/error/Error";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getSeries()
@@ -24,7 +24,7 @@ const SeriesList = () => {
 
   return (
     <>
-      <div className="lista">
+      <div className="seriesList">
         {series.map((serie) => (
           <SeriesCard
             key={serie.id}
