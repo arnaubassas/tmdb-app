@@ -1,8 +1,16 @@
-import { formatDate } from "../../../functions";
-import { CardListProps } from "../../../interfaces";
-import "./card.scss";
+import { language } from "../../../const";
+import "./SeriesCard.scss";
 
-const SeriesCard: React.FC<CardListProps> = ({ id, name, src, date }) => {
+interface SeriesCardProps {
+  id: number;
+  name: string;
+  src: string;
+  date: string;
+}
+
+const SeriesCard: React.FC<SeriesCardProps> = ({ id, name, src, date }) => {
+  const newdate = new Date(date);
+
   return (
     <div className="container">
       <img
@@ -11,7 +19,13 @@ const SeriesCard: React.FC<CardListProps> = ({ id, name, src, date }) => {
       />
       <div className="information">
         <div className="title">{name}</div>
-        <div className="date">{formatDate(date)}</div>
+        <div className="date">
+          {newdate.toLocaleDateString(language, {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })}
+        </div>
       </div>
     </div>
   );

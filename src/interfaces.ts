@@ -15,9 +15,4 @@ export interface SeriesListRequest {
   vote_count: number;
 }
 
-export interface CardListProps {
-  id: number;
-  name: string;
-  src: string;
-  date: string;
-}
+
