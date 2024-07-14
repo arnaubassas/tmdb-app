@@ -26,7 +26,7 @@ async function getSeries(): Promise<SeriesListRequest[]> {
   }
 }
 
-async function getSerieById(id: number): Promise<DetailRequest> {
+async function getSerieById(id:string): Promise<DetailRequest> {
 
     try {
         const basicUrl = `${url}/tv/${id}`;

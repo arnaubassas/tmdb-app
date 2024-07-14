@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 import { DetailRequest } from "../../interfaces";
 import { getSerieById } from "../../services";
+import { useParams } from "react-router-dom";
 
 const DetailSerie = () => {
   const [serie, setSerie] = useState<DetailRequest>();
-  const id = 76479;
+
+  const { id } = useParams();
 
   useEffect(() => {
-    getSerieById(id).then((data) => {
-      console.log(data);
-      setSerie(data);
-    });
-  }, []);
+    if (id) {
+      getSerieById(id).then((data) => {
+        setSerie(data);
+      });
+    }
+  }, [id]);
 
-  return (
-    <>
-      <div>sdas</div>
-    </>
-  );
+  return <></>;
 };
 
 export default DetailSerie;

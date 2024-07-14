@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { language } from "../../../const";
 import "./SeriesCard.scss";
 
@@ -12,7 +13,7 @@ const SeriesCard: React.FC<SeriesCardProps> = ({ id, name, src, date }) => {
   const newdate = new Date(date);
 
   return (
-    <div className="seriesCard">
+    <Link to={`/serie/${id}`} className="seriesCard">
       <img
         src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${src}`}
         alt="poster"
@@ -27,7 +28,7 @@ const SeriesCard: React.FC<SeriesCardProps> = ({ id, name, src, date }) => {
           })}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
