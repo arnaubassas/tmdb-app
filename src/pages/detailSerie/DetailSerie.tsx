@@ -31,7 +31,6 @@ const DetailSerie = () => {
         name={serie.name}
         date={serie.first_air_date}
         poster={serie.poster_path}
-        backgroundPoster={serie.backdrop_path}
         overview={serie.overview}
         createrby={serie.created_by}
         status={serie.status}

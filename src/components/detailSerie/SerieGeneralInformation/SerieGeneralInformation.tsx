@@ -4,7 +4,6 @@ interface SeriesGeneralInformationProps {
   name: string;
   date: string;
   poster: string;
-  backgroundPoster: string;
   overview: string;
   createrby: CreatedBy[];
   status: string;
@@ -17,7 +16,6 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
   name,
   date,
   poster,
-  backgroundPoster,
   overview,
   createrby,
   status,
