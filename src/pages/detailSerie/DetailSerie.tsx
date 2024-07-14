@@ -27,20 +27,18 @@ const DetailSerie = () => {
 
   return (
     <>
-      <div>
-        <SerieGeneralInformation
-          name={serie.name}
-          date={serie.first_air_date}
-          poster={serie.poster_path}
-          backgroundPoster={serie.backdrop_path}
-          overview={serie.overview}
-          createrby={serie.created_by}
-          status={serie.status}
-          punctuation={serie.vote_average}
-          tagline={serie.tagline}
-          genre={serie.genres}
-        />
-      </div>
+      <SerieGeneralInformation
+        name={serie.name}
+        date={serie.first_air_date}
+        poster={serie.poster_path}
+        backgroundPoster={serie.backdrop_path}
+        overview={serie.overview}
+        createrby={serie.created_by}
+        status={serie.status}
+        rating={serie.vote_average}
+        tagline={serie.tagline}
+        genre={serie.genres}
+      />
     </>
   );
 };

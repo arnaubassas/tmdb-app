@@ -8,7 +8,7 @@ interface SeriesGeneralInformationProps {
   overview: string;
   createrby: CreatedBy[];
   status: string;
-  punctuation: number;
+  rating: number;
   tagline: string;
   genre: Genre[];
 }
@@ -21,7 +21,7 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
   overview,
   createrby,
   status,
-  punctuation,
+  rating,
   tagline,
   genre,
 }) => {
@@ -46,11 +46,11 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
             <div key={g.id}>{g.name}</div>
           ))}
         </div>
-        <div className="serieGeneralInformation__text__punctuation">
-          <span className="serieGeneralInformation__text__punctuation__spanPunctuation">
-            {punctuation}
+        <div className="serieGeneralInformation__text__rating">
+          <span className="serieGeneralInformation__text__rating__spanRating">
+            {rating.toFixed(1)}
           </span>
-          User punctuation
+          User rating
         </div>
         <div className="serieGeneralInformation__text__status">
           <span className="serieGeneralInformation__text__status__span">
