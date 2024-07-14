@@ -16,7 +16,7 @@ export interface SeriesListRequest {
 }
 
 
-interface CreatedBy {
+export interface CreatedBy {
     id: number;
     credit_id: string;
     name: string;
@@ -25,7 +25,7 @@ interface CreatedBy {
     profile_path: string;
 }
 
-interface Genre {
+export interface Genre {
     id: number;
     name: string;
 }
