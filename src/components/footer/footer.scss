@@ -1,0 +1,22 @@
+.footer {
+  height: 70px;
+  background-color: rgb(0, 0, 94, 0.8);
+  box-shadow: 1;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  color: white;
+  padding: 0 40px;
+
+  &__logo {
+    font-weight: 700;
+  }
+  &__copywrite {
+    display: flex;
+    :first-child {
+      padding-right: 5px;
+    }
+  }
+}

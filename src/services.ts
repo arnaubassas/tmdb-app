@@ -3,11 +3,15 @@ import {  DetailRequest, SeriesListRequest } from "./interfaces";
 const key = import.meta.env.VITE_TMDB_API_KEY;
 const url = import.meta.env.VITE_TMDB_BASE_URL;
 
-async function getSeries(): Promise<SeriesListRequest[]> {
+
+type SeriesType =  "airing_today" | "on_the_air" | "popular" | "top_rated";
+
+
+async function getSeries(list:SeriesType): Promise<SeriesListRequest[]> {
   
 
   try {
-    const basicUrl = `${url}/tv/popular`;
+    const basicUrl = `${url}/tv/${list}`;
 
     const params = new URLSearchParams({
       page: "1",
