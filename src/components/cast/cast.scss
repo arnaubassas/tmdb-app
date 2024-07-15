@@ -1,5 +1,5 @@
 @import "../../theme.scss";
-.similarContent {
+.castContent {
   padding: $spacing-xl $spacing-xl 0;
   &__similarSlider {
     display: flex;
@@ -12,22 +12,30 @@
   &__title {
     font-weight: $bold-weight;
   }
-  &__link {
+  &__inside {
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: $fontColor-dark;
-    &__informationSerie {
+    font-size: x-small;
+    &__informationActor {
       padding: 15px $spacing-s;
 
-      &__title {
+      &__name {
         font-weight: $bold-weight;
-        font-size: x-small;
         padding-bottom: $spacing-xs;
       }
 
-      &__date {
-        font-size: xx-small;
+      &__realName {
+        padding-bottom: $spacing-xs;
+        div:not(:last-child)::after {
+          content: ",";
+          padding-right: $spacing-xs;
+        }
+      }
+
+      &__episodes {
+        padding-bottom: $spacing-xs;
         color: rgba(0, 0, 0, 0.6);
       }
     }

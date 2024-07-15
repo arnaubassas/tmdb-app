@@ -6,6 +6,7 @@ import SerieGeneralInformation from "../../components/SerieGeneralInformation/Se
 import Error from "../../components/error/Error";
 import Loading from "../../components/loading/Loading";
 import SimilarContent from "../../components/similarContent/SimilarContent";
+import Cast from "../../components/cast/Cast";
 
 const SeriesDetail = () => {
   const [serie, setSerie] = useState<DetailRequest>();
@@ -39,6 +40,8 @@ const SeriesDetail = () => {
         tagline={serie.tagline}
         genre={serie.genres}
       />
+
+      <Cast id={serie.id} />
 
       <SimilarContent id={serie.id} />
     </>
