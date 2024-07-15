@@ -6,7 +6,7 @@ import SerieGeneralInformation from "../../components/SerieGeneralInformation/Se
 import Error from "../../components/error/Error";
 import Loading from "../../components/loading/Loading";
 
-const DetailSerie = () => {
+const SeriesDetail = () => {
   const [serie, setSerie] = useState<DetailRequest>();
   const [error, setError] = useState(false);
 
@@ -42,4 +42,4 @@ const DetailSerie = () => {
   );
 };
 
-export default DetailSerie;
+export default SeriesDetail;
