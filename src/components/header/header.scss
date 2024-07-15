@@ -1,35 +1,72 @@
+@import "../../theme.scss";
 .header {
   height: 70px;
   background-color: rgb(0, 0, 94, 0.8);
   box-shadow: 1;
-  margin-bottom: 20px;
+  margin-bottom: $spacing-m;
   display: flex;
-  justify-content: start;
   box-sizing: border-box;
   align-items: center;
-  color: white;
+  color: $fontColor-light;
   &__logo {
     justify-self: start;
-    padding: 0 40px;
-    font-weight: 700;
+    padding: 0 $spacing-xl;
+    font-weight: $bold-weight;
+    white-space: nowrap;
   }
   &__seriesOptions {
-    padding: 0 40px;
-    display: flex;
-    justify-content: start;
-    flex: 1;
+    padding: 0 $spacing-l;
+  
+    white-space: nowrap;
     a {
-      color: white;
+      color: $fontColor-light;
       text-decoration: none;
-      padding-right: 40px;
     }
   }
   &__user {
-    padding-right: 40px;
+    padding-right: $spacing-xl;
+    display: flex;
+    justify-content: end;
+    flex:1;
     &__photo {
-      padding: 20px;
+
+      padding: $spacing-m;
       background-color: black;
       border-radius: 50%;
     }
   }
+  @media (max-width: 680px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    height: 100px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    
+
+    &__logo {
+      grid-row: 1;
+      padding: 0;
+      justify-self: center;
+    }
+
+    &__seriesOptions {
+      grid-row: 2;
+      padding:0;
+      display: flex;
+      font-size: $fontSize-s;
+      justify-self: center;
+    }
+
+    &__user {
+      grid-row: 1;
+      grid-column:4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:0;
+    }
+  }
 }
+
