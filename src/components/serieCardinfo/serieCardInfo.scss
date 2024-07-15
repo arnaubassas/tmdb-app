@@ -1,0 +1,15 @@
+@import "../../theme.scss";
+.informationSerie {
+  padding: 15px $spacing-s;
+
+  &__title {
+    font-weight: $bold-weight;
+    font-size: x-small;
+    padding-bottom: $spacing-xs;
+  }
+
+  &__date {
+    font-size: xx-small;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}

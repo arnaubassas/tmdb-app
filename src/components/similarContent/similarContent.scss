@@ -1,16 +1,29 @@
 @import "../../theme.scss";
-.similarContent{
-   padding: $spacing-xl $spacing-xl 0;
-   &__similarSlider{
+.similarContent {
+  padding: $spacing-xl $spacing-xl 0;
+  &__similarSlider {
     display: flex;
     overflow-x: scroll;
-    padding-bottom: $spacing-l ;
+    padding-bottom: $spacing-l;
     gap: $spacing-m;
     scrollbar-color: rgba(187, 176, 176, 0.4) white;
     scrollbar-width: thin;
-   }
-   &__title{
+  }
+  &__title {
     font-weight: $bold-weight;
-   }
-   
+  }
+  &__informationSerie {
+    padding: 15px $spacing-s;
+
+    &__title {
+      font-weight: $bold-weight;
+      font-size: x-small;
+      padding-bottom: $spacing-xs;
+    }
+
+    &__date {
+      font-size: xx-small;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
 }

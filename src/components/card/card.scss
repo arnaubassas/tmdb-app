@@ -1,5 +1,5 @@
 @import "../../theme.scss";
-.seriesCard {
+.card {
   border: solid 1px #e3e3e3;
   border-radius: 8px;
   display: flex;
@@ -11,19 +11,4 @@
   max-width: 120px;
   color: $fontColor-dark;
   text-decoration: none;
-
-  &__information {
-    padding: 15px $spacing-s;
-
-    &__title {
-      font-weight: $bold-weight;
-      font-size: x-small;
-      padding-bottom: $spacing-xs;
-    }
-
-    &__date {
-      font-size: xx-small;
-      color: rgba(0, 0, 0, 0.6);
-    }
-  }
 }

@@ -1,0 +1,9 @@
+@import "../../theme.scss";
+.slider {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: $spacing-l;
+  gap: $spacing-m;
+  scrollbar-color: rgba(187, 176, 176, 0.4) white;
+  scrollbar-width: thin;
+}

@@ -3,10 +3,11 @@ import { getSeries } from "../../services";
 import { SeriesListRequest } from "../../interfaces";
 
 import "./SeriesList.scss";
-import SeriesCard from "../../components/seriesCard/SeriesCard";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import { useParams } from "react-router-dom";
+import Card from "../../components/card/Card";
+import { dateModify } from "../../functions";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
@@ -31,13 +32,20 @@ const SeriesList = () => {
     <>
       <div className="seriesList">
         {series.map((serie) => (
-          <SeriesCard
-            key={serie.id}
-            id={serie.id}
-            name={serie.name}
-            src={serie.poster_path}
-            date={serie.first_air_date}
-          />
+          <Card key={serie.id} id={serie.id}>
+            <img
+              src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${serie.poster_path}`}
+              alt="poster"
+            />
+            <div className="seriesList__informationSerie">
+              <div className="seriesList__informationSerie__title">
+                {serie.name}
+              </div>
+              <div className="seriesList__informationSerie__date">
+                {dateModify(serie.first_air_date)}
+              </div>
+            </div>
+          </Card>
         ))}
       </div>
     </>

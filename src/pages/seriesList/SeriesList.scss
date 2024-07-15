@@ -4,6 +4,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 20px 10px;
+  &__informationSerie {
+    padding: 15px $spacing-s;
+
+    &__title {
+      font-weight: $bold-weight;
+      font-size: x-small;
+      padding-bottom: $spacing-xs;
+    }
+
+    &__date {
+      font-size: xx-small;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
 }
 
 // @media (max-width: 800px) {

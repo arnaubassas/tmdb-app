@@ -3,8 +3,11 @@ import { SeriesListRequest } from "../../interfaces";
 import { getSimilarById } from "../../services";
 import Loading from "../loading/Loading";
 import Error from "../error/Error";
-import SeriesCard from "../seriesCard/SeriesCard";
 import "./similarContent.scss";
+import Slider from "../slider/Slider";
+import Card from "../card/Card";
+import { dateModify } from "../../functions";
+
 interface SimilarContentProps {
   id: number;
 }
@@ -26,17 +29,24 @@ const SimilarContent: React.FC<SimilarContentProps> = ({ id }) => {
   return (
     <div className="similarContent">
       <div className="similarContent__title">Similar Suggestions</div>
-      <div className="similarContent__similarSlider">
+      <Slider>
         {similar.map((serie) => (
-          <SeriesCard
-            key={serie.id}
-            id={serie.id}
-            name={serie.name}
-            src={serie.poster_path}
-            date={serie.first_air_date}
-          />
+          <Card key={serie.id} id={serie.id}>
+            <img
+              src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${serie.poster_path}`}
+              alt="poster"
+            />
+            <div className="similarContent__informationSerie">
+              <div className="similarContent__informationSerie__title">
+                {serie.name}
+              </div>
+              <div className="similarContent__informationSerie__date">
+                {dateModify(serie.first_air_date)}
+              </div>
+            </div>
+          </Card>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };
