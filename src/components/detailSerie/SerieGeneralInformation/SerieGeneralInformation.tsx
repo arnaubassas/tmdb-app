@@ -5,7 +5,7 @@ interface SeriesGeneralInformationProps {
   date: string;
   poster: string;
   overview: string;
-  createrby: CreatedBy[];
+  createdy: CreatedBy[];
   status: string;
   rating: number;
   tagline: string;
@@ -17,7 +17,7 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
   date,
   poster,
   overview,
-  createrby,
+  createdBy,
   status,
   rating,
   tagline,
@@ -60,15 +60,19 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
           <p className="serieGeneralInformation__text__about__tagline">
             {tagline}
           </p>
-          <p className="serieGeneralInformation__text__about__title">
-            Overview
-          </p>
-          <p className="serieGeneralInformation__text__about__overview">
-            {overview}
-          </p>
+          {overview && (
+            <>
+              <p className="serieGeneralInformation__text__about__title">
+                Overview
+              </p>
+              <p className="serieGeneralInformation__text__about__overview">
+                {overview}
+              </p>
+            </>
+          )}
         </div>
         <div className="serieGeneralInformation__text__createrby">
-          {createrby.map((creator) => (
+          {createdBy.map((creator: CreatedBy) => (
             <div
               className="serieGeneralInformation__text__createrby__information"
               key={creator.id}

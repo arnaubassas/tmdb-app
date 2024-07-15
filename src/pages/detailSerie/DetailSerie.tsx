@@ -32,7 +32,7 @@ const DetailSerie = () => {
         date={serie.first_air_date}
         poster={serie.poster_path}
         overview={serie.overview}
-        createrby={serie.created_by}
+        createdBy={serie.created_by}
         status={serie.status}
         rating={serie.vote_average}
         tagline={serie.tagline}
