@@ -1,0 +1,16 @@
+@import "../../theme.scss";
+.similarContent{
+   padding: $spacing-xl $spacing-xl 0;
+   &__similarSlider{
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: $spacing-l ;
+    gap: $spacing-m;
+    scrollbar-color: rgba(187, 176, 176, 0.4) white;
+    scrollbar-width: thin;
+   }
+   &__title{
+    font-weight: $bold-weight;
+   }
+   
+}

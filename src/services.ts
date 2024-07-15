@@ -49,5 +49,24 @@ async function getSerieById(id:string): Promise<DetailRequest> {
       }
 }
 
+async function getSimilarById(id:number): Promise<SeriesListRequest[]> {
 
-export { getSeries, getSerieById  };
+  try {
+      const basicUrl = `${url}/tv/${id}/similar`;
+      const params = new URLSearchParams({
+          language: language,
+          api_key: key,
+        });
+        
+      const completeUrl = `${basicUrl}?${params.toString()}`;
+      const response = await fetch(completeUrl);
+      const data = await response.json();
+      return data.results;
+  } catch (e: any) {
+      console.log(e);
+      throw e
+    }
+}
+
+
+export { getSeries, getSerieById, getSimilarById  };

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import SerieGeneralInformation from "../../components/SerieGeneralInformation/SerieGeneralInformation";
 import Error from "../../components/error/Error";
 import Loading from "../../components/loading/Loading";
+import SimilarContent from "../../components/similarContent/SimilarContent";
 
 const SeriesDetail = () => {
   const [serie, setSerie] = useState<DetailRequest>();
@@ -38,6 +39,8 @@ const SeriesDetail = () => {
         tagline={serie.tagline}
         genre={serie.genres}
       />
+
+      <SimilarContent id={serie.id} />
     </>
   );
 };
