@@ -1,11 +1,11 @@
-import { CreatedBy, Genre } from "../../../interfaces";
+import { CreatedBy, Genre } from "../../interfaces";
 import "./SerieGeneralInformation.scss";
 interface SeriesGeneralInformationProps {
   name: string;
   date: string;
   poster: string;
   overview: string;
-  createdBy: CreatedBy[];
+  createdy: CreatedBy[];
   status: string;
   rating: number;
   tagline: string;

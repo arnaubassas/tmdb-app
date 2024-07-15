@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DetailRequest } from "../../interfaces";
 import { getSerieById } from "../../services";
 import { useParams } from "react-router-dom";
-import SerieGeneralInformation from "../../components/detailSerie/SerieGeneralInformation/SerieGeneralInformation";
+import SerieGeneralInformation from "../../components/SerieGeneralInformation/SerieGeneralInformation";
 import Error from "../../components/error/Error";
 import Loading from "../../components/loading/Loading";
 

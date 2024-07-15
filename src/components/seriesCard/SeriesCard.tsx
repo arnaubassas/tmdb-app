@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { language } from "../../../const";
+import { language } from "../../const";
 import "./SeriesCard.scss";
 
 interface SeriesCardProps {
