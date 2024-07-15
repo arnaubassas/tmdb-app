@@ -1,3 +1,4 @@
+@import "../../theme.scss";
 .seriesCard {
   border: solid 1px #e3e3e3;
   border-radius: 8px;
@@ -5,19 +6,19 @@
   flex-direction: column;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: $spacing-xl;
   min-width: 100px;
   max-width: 120px;
-  color: black;
+  color: $fontColor-dark;
   text-decoration: none;
 
   &__information {
-    padding: 15px 10px 15px;
+    padding: 15px $spacing-s;
 
     &__title {
-      font-weight: bold;
+      font-weight: $bold-weight;
       font-size: x-small;
-      padding-bottom: 5px;
+      padding-bottom: $spacing-xs;
     }
 
     &__date {

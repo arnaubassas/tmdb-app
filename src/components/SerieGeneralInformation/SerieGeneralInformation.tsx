@@ -5,7 +5,7 @@ interface SeriesGeneralInformationProps {
   date: string;
   poster: string;
   overview: string;
-  createdy: CreatedBy[];
+  createdBy: CreatedBy[];
   status: string;
   rating: number;
   tagline: string;
