@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import img from "../../img/img.jpg";
 import bigImg from "../../img/bigimg.jpg";
 
@@ -11,6 +11,10 @@ interface ImageProps {
 
 const Image: React.FC<ImageProps> = ({ src, alt, type, className }) => {
   const [imgSrc, setImgSrc] = useState<string>(src);
+
+  useEffect(() => {
+    setImgSrc(src);
+  }, [src]);
 
   const handleError = () => {
     if (type == "small") setImgSrc(img);
