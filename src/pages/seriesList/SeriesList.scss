@@ -1,11 +1,12 @@
 @import "../../theme.scss";
 .seriesListPage {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 $spacing-xl$spacing-xl;
 
   &__seriesList {
-    padding: 0 $spacing-m;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: $spacing-m $spacing-s;
@@ -29,6 +30,23 @@
           color: rgba(0, 0, 0, 0.6);
         }
       }
+    }
+  }
+  &__buttonContent {
+    padding: $spacing-xl 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &__button {
+      width: 100%;
+      padding: $spacing-s 0;
+      background-color: rgb(0, 0, 94);
+      color: $fontColor-light;
+      font-weight: $bold-weight;
+      border-radius: $spacing-s;
+      border: 1px solid black;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   }
 

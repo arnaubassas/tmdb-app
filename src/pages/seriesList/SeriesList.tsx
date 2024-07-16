@@ -14,18 +14,23 @@ import { imageUrl } from "../../const";
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
   const [error, setError] = useState(false);
+  const [page, setPage] = useState(1);
 
   const { list } = useParams<{ list: SeriesType }>();
 
   useEffect(() => {
     if (list) {
-      getSeries(list)
+      getSeries(list, page)
         .then((data) => {
-          setSeries(data);
+          if (page === 1) {
+            setSeries(data);
+          } else {
+            setSeries((prevSeries) => [...(prevSeries || []), ...(data || [])]);
+          }
         })
         .catch(() => setError(true));
     }
-  }, [list]);
+  }, [list, page]);
 
   if (error) return <Error />;
   if (!series) return <Loading />;
@@ -56,6 +61,16 @@ const SeriesList = () => {
             </Link>
           </Card>
         ))}
+      </div>
+      <div className="seriesListPage__buttonContent">
+        <button
+          className="seriesListPage__buttonContent__button"
+          onClick={() => {
+            setPage(page + 1);
+          }}
+        >
+          Más Resultados
+        </button>
       </div>
     </div>
   );

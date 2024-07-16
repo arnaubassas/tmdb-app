@@ -17,11 +17,6 @@ const Cast: React.FC<CastProps> = ({ id }) => {
   const [cast, setCast] = useState<CastRequest[]>();
   const [error, setError] = useState(false);
 
-  // const {response, error, isLoading} = useFetch(
-  //   () => getCastById(id),
-  //   [id]
-  // )
-
   useEffect(() => {
     getCastById(id)
       .then((data) => {
