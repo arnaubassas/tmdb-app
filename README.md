@@ -23,7 +23,7 @@ Dentro de src/ también hay los siguientes archivos:
 ```
 /App.scss          --> archivo scss del layout.
 /App.tsx           --> layout de la página.
-/const.ts          --> archivo con constantes globales de la página en ese caso solo hay el lenguaje y país.
+/const.ts          --> archivo con constantes globales de la página.
 /interfaces.ts     --> archivo con las interfaces.
 /main.tsx          --> archivo que inicializa la app y donde encontrar las rutas.
 /services.ts       --> archivo con las peticiones a la API.
