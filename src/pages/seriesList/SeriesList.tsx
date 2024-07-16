@@ -7,7 +7,7 @@ import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
 import { Link, useParams } from "react-router-dom";
 import Card from "../../components/card/Card";
-import { dateModify } from "../../functions";
+import { dateModify } from "../../utils";
 import Image from "../../components/img/Image";
 
 const SeriesList = () => {

@@ -6,7 +6,7 @@ import Error from "../error/Error";
 import "./similarContent.scss";
 import Slider from "../slider/Slider";
 import Card from "../card/Card";
-import { dateModify } from "../../functions";
+import { dateModify } from "../../utils";
 import { Link } from "react-router-dom";
 import Image from "../img/Image";
 

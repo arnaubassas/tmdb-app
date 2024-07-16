@@ -1,4 +1,4 @@
-import { dateModify } from "../../functions";
+import { dateModify } from "../../utils";
 import { Season } from "../../interfaces";
 import Card from "../card/Card";
 import Image from "../img/Image";
