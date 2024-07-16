@@ -43,7 +43,8 @@ const Cast: React.FC<CastProps> = ({ id }) => {
               <Image
                 src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${actor.profile_path}`}
                 alt="poster"
-                type="small"
+                size="small"
+                className=""
               />
               <div className="castContent__inside__informationActor">
                 <div className="castContent__inside__informationActor__name">

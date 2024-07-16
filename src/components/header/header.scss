@@ -28,10 +28,13 @@
     display: flex;
     justify-content: end;
     flex: 1;
+
     &__photo {
-      padding: $spacing-m;
-      background-color: white;
-      border-radius: 50%;
+      display: flex;
+      &__user {
+        width: 52px;
+        overflow: hidden;
+      }
     }
   }
   @media (max-width: 680px) {

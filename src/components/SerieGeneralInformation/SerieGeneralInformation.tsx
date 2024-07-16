@@ -31,7 +31,7 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
           className="serieGeneralInformation__poster__image"
           src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${poster}`}
           alt="poster"
-          type="big"
+          size="big"
         />
       </div>
       <div className="serieGeneralInformation__text">

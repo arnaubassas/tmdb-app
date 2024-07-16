@@ -21,7 +21,7 @@ const CurrentSeason: React.FC<CurrentSeasonProps> = ({ seasons, name }) => {
               className="currentSeasonContent__inside__poster__image"
               src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${lastSeason[0].poster_path}`}
               alt="poster"
-              type="small"
+              size="small"
             />
           </div>
           <div className="currentSeasonContent__inside__information">
