@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
-import { getSeries } from "../../services";
+import { getSeries, SeriesType } from "../../services";
 import { SeriesListRequest } from "../../interfaces";
 
 import "./SeriesList.scss";
-import SeriesCard from "../../components/seriesCard/SeriesCard";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Card from "../../components/card/Card";
+import { dateModify } from "../../utils";
+import Image from "../../components/img/Image";
+import { imageUrl } from "../../const";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
   const [error, setError] = useState(false);
 
-  const { list } = useParams();
+  const { list } = useParams<{ list: SeriesType }>();
 
   useEffect(() => {
     if (list) {
@@ -28,19 +31,33 @@ const SeriesList = () => {
   if (!series) return <Loading />;
 
   return (
-    <>
-      <div className="seriesList">
+    <div className="seriesListPage">
+      <div className="seriesListPage__seriesList">
         {series.map((serie) => (
-          <SeriesCard
-            key={serie.id}
-            id={serie.id}
-            name={serie.name}
-            src={serie.poster_path}
-            date={serie.first_air_date}
-          />
+          <Card key={serie.id} size="small">
+            <Link
+              to={`/serie/${serie.id}`}
+              className="seriesListPage__seriesList__link"
+            >
+              <Image
+                src={`${imageUrl}${serie.poster_path}`}
+                alt="poster"
+                size="small"
+              />
+
+              <div className="seriesListPage__seriesList__link__informationSerie">
+                <div className="seriesListPage__seriesList__link__informationSerie__title">
+                  {serie.name}
+                </div>
+                <div className="seriesListPage__seriesList__link__informationSerie__date">
+                  {dateModify(serie.first_air_date)}
+                </div>
+              </div>
+            </Link>
+          </Card>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,49 @@
+@import "../../theme.scss";
+.currentSeasonContent {
+  padding: $spacing-xl $spacing-xl 0;
+  box-sizing: border-box;
+  &__title {
+    font-size: $fontSize-m;
+    font-weight: $bold-weight;
+    margin-bottom: $spacing-s;
+  }
+  &__inside {
+    display: flex;
+    &__poster {
+      min-width: 135px;
+      width: 135px;
+      height: 100%;
+      overflow: hidden;
+
+      &__image {
+        width: 100%;
+        min-width: 100%;
+        outline: 0;
+        border-radius: 8px 0 0 8px;
+      }
+    }
+    &__information {
+      padding: $spacing-m $spacing-m;
+      &__numberSeason {
+        font-weight: $bold-weight;
+        font-size: $fontSize-s;
+      }
+      &__episodes {
+        opacity: 0.8;
+        font-size: $fontSize-xs;
+        padding-bottom: $spacing-l;
+      }
+      &__text {
+        font-size: $fontSize-xs;
+        padding-bottom: $spacing-l;
+      }
+      &__score {
+        font-size: $fontSize-xs;
+        padding-bottom: $spacing-l;
+        &__span {
+          font-weight: $bold-weight;
+        }
+      }
+    }
+  }
+}

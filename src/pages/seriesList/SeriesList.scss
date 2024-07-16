@@ -1,25 +1,47 @@
 @import "../../theme.scss";
-.seriesList {
-  padding: 0 $spacing-m;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 10px;
+.seriesListPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__seriesList {
+    padding: 0 $spacing-m;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: $spacing-m $spacing-s;
+    &__link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: $fontColor-dark;
+
+      &__informationSerie {
+        padding: 15px $spacing-s;
+
+        &__title {
+          font-weight: $bold-weight;
+          font-size: x-small;
+          padding-bottom: $spacing-xs;
+        }
+
+        &__date {
+          font-size: xx-small;
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__seriesList {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 680px) {
+    &__seriesList {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xl $spacing-xl;
+    }
+  }
 }
-
-// @media (max-width: 800px) {
-//     .lista {
-//         grid-template-columns: repeat(4, 1fr);
-//     }
-// }
-
-// @media (max-width: 550px) {
-//     .lista {
-//         grid-template-columns: repeat(3, 1fr);
-//     }
-// }
-
-// @media (max-width: 400px) {
-//     .lista {
-//         grid-template-columns: repeat(2, 1fr);
-//     }
-// }

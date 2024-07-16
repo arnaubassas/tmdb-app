@@ -65,7 +65,7 @@ interface ProductionCountry {
     name: string;
 }
 
-interface Season {
+export interface Season {
     air_date: string | null;
     episode_count: number;
     id: number;
@@ -102,4 +102,23 @@ export interface DetailRequest extends Omit<SeriesListRequest, 'genre_ids'> {
     status: string;
     tagline: string;
     type: string;
+}
+
+interface Role {
+    credit_id: string;
+    character: string;
+    episode_count: number;
+  }
+export interface CastRequest {
+    adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  roles: Role[];
+  total_episode_count: number;
+  order: number;
 }

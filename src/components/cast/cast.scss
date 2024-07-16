@@ -1,0 +1,44 @@
+@import "../../theme.scss";
+.castContent {
+  padding: $spacing-xl $spacing-xl 0;
+  &__similarSlider {
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: $spacing-l;
+    gap: $spacing-m;
+    scrollbar-color: rgba(187, 176, 176, 0.4) white;
+    scrollbar-width: thin;
+  }
+  &__title {
+    font-size: $fontSize-m;
+    font-weight: $bold-weight;
+  }
+  &__inside {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: $fontColor-dark;
+    font-size: x-small;
+    &__informationActor {
+      padding: 15px $spacing-s;
+
+      &__name {
+        font-weight: $bold-weight;
+        padding-bottom: $spacing-xs;
+      }
+
+      &__realName {
+        padding-bottom: $spacing-xs;
+        div:not(:last-child)::after {
+          content: ",";
+          padding-right: $spacing-xs;
+        }
+      }
+
+      &__episodes {
+        padding-bottom: $spacing-xs;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
