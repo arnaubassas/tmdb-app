@@ -28,17 +28,21 @@ const SeriesList = () => {
           setSeries(data);
         })
         .catch(() => setError(true));
-    }
-    if (list) {
-      getSeries(list, page)
-        .then((data) => {
-          if (page === "1") {
-            setSeries(data);
-          } else {
-            setSeries((prevSeries) => [...(prevSeries || []), ...(data || [])]);
-          }
-        })
-        .catch(() => setError(true));
+    } else {
+      if (list) {
+        getSeries(list, page)
+          .then((data) => {
+            if (page === "1") {
+              setSeries(data);
+            } else {
+              setSeries((prevSeries) => [
+                ...(prevSeries || []),
+                ...(data || []),
+              ]);
+            }
+          })
+          .catch(() => setError(true));
+      }
     }
   }, [list, page, search, searchActive]);
 
