@@ -15,7 +15,6 @@ interface CastProps {
 
 const Cast: React.FC<CastProps> = ({ id }) => {
   const [cast, setCast] = useState<CastRequest[]>();
-  const [principalCast, setPrincipalCast] = useState<CastRequest[]>();
   const [error, setError] = useState(false);
 
   // const {response, error, isLoading} = useFetch(
@@ -26,19 +25,18 @@ const Cast: React.FC<CastProps> = ({ id }) => {
   useEffect(() => {
     getCastById(id)
       .then((data) => {
-        setPrincipalCast(data.slice(0, 15));
-        setCast(data);
+        setCast(data.slice(0, 15));
       })
       .catch(() => setError(true));
   }, [id]);
 
   if (error) return <Error />;
-  if (!principalCast) return <Loading />;
+  if (!cast) return <Loading />;
   return (
     <div className="castContent">
       <div className="castContent__title">Series Cast</div>
       <Slider>
-        {principalCast.map((actor) => (
+        {cast.map((actor) => (
           <Card key={actor.id} size="small">
             <div className="castContent__inside">
               <Image
