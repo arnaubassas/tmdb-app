@@ -1,4 +1,5 @@
 import { CreatedBy, Genre } from "../../interfaces";
+import Image from "../img/Image";
 import "./SerieGeneralInformation.scss";
 interface SeriesGeneralInformationProps {
   name: string;
@@ -26,10 +27,11 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
   return (
     <div className="serieGeneralInformation">
       <div className="serieGeneralInformation__poster">
-        <img
+        <Image
           className="serieGeneralInformation__poster__image"
-          src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${poster}`}
+          src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${poster}`}
           alt="poster"
+          type="big"
         />
       </div>
       <div className="serieGeneralInformation__text">

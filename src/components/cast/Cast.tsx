@@ -6,6 +6,7 @@ import { CastRequest } from "../../interfaces";
 import Error from "../error/Error";
 import Slider from "../slider/Slider";
 import Card from "../card/Card";
+import Image from "../img/Image";
 
 interface CastProps {
   id: number;
@@ -39,9 +40,10 @@ const Cast: React.FC<CastProps> = ({ id }) => {
         {principalCast.map((actor) => (
           <Card key={actor.id} size="small">
             <div className="castContent__inside">
-              <img
+              <Image
                 src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${actor.profile_path}`}
                 alt="poster"
+                type="small"
               />
               <div className="castContent__inside__informationActor">
                 <div className="castContent__inside__informationActor__name">
@@ -50,7 +52,7 @@ const Cast: React.FC<CastProps> = ({ id }) => {
                 <div className="castContent__inside__informationActor__realName">
                   {" "}
                   {actor.roles.map((role) => (
-                    <div>{role.character}</div>
+                    <div key={role.credit_id}>{role.character}</div>
                   ))}
                 </div>
                 <div className="castContent__inside__informationActor__episodes">

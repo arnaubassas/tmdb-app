@@ -16,7 +16,7 @@
   }
   &__seriesOptions {
     padding: 0 $spacing-l;
-  
+
     white-space: nowrap;
     a {
       color: $fontColor-light;
@@ -27,11 +27,10 @@
     padding-right: $spacing-xl;
     display: flex;
     justify-content: end;
-    flex:1;
+    flex: 1;
     &__photo {
-
       padding: $spacing-m;
-      background-color: black;
+      background-color: white;
       border-radius: 50%;
     }
   }
@@ -43,7 +42,6 @@
     padding: 0;
     align-items: center;
     justify-content: center;
-    
 
     &__logo {
       grid-row: 1;
@@ -53,7 +51,7 @@
 
     &__seriesOptions {
       grid-row: 2;
-      padding:0;
+      padding: 0;
       display: flex;
       font-size: $fontSize-s;
       justify-self: center;
@@ -61,12 +59,11 @@
 
     &__user {
       grid-row: 1;
-      grid-column:4;
+      grid-column: 4;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding:0;
+      padding: 0;
     }
   }
 }
-

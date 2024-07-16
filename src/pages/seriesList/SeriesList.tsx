@@ -8,6 +8,7 @@ import Error from "../../components/error/Error";
 import { Link, useParams } from "react-router-dom";
 import Card from "../../components/card/Card";
 import { dateModify } from "../../functions";
+import Image from "../../components/img/Image";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
@@ -37,10 +38,12 @@ const SeriesList = () => {
               to={`/serie/${serie.id}`}
               className="seriesListPage__seriesList__link"
             >
-              <img
+              <Image
                 src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${serie.poster_path}`}
                 alt="poster"
+                type="small"
               />
+
               <div className="seriesListPage__seriesList__link__informationSerie">
                 <div className="seriesListPage__seriesList__link__informationSerie__title">
                   {serie.name}
