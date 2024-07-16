@@ -38,7 +38,7 @@ He procedido creando componentes reutilizables como image, slider y card. Esos c
 
 También he separado las distintas secciones de las páginas en componentes independientes para hacer más leíble y escalable el código. Si se quisiera añadir un las mismas secciones existentes en séries con películas se podría reutilizar gran cantidad de los componentes ya creados.
 
-En el diseño me he basado en la web de tmdb. He dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar.
+En el diseño he dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar. También he hecho media query para que la lista de séries fuera con 2, 4 y 5 columnas porque así quedaban las filas siempre llenas.
 
 ## Partes mejorables
 
