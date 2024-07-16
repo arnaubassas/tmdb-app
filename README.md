@@ -36,7 +36,7 @@ El archivo .env es público porque la url era pública y por tanto no servía de
 
 He procedido creando componentes reutilizables como image, slider y card. Esos componentes se van usando a lo largo del código.
 
-También he separado las distintas secciones de las páginas en componentes independientes para hacer más leíble y escalable el código. Si se quisiera añadir un apartado de películas se podría reutilizar gran cantidad de los componentes ya creados.
+También he separado las distintas secciones de las páginas en componentes independientes para hacer más leíble y escalable el código. Si se quisiera añadir un las mismas secciones existentes en séries con películas se podría reutilizar gran cantidad de los componentes ya creados.
 
 En el diseño me he basado en tmdb. He dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar.
 
