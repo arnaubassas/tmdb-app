@@ -7,14 +7,14 @@ const url = import.meta.env.VITE_TMDB_BASE_URL;
 export type SeriesType =  "airing_today" | "on_the_air" | "popular" | "top_rated";
 
 
-async function getSeries(list:SeriesType): Promise<SeriesListRequest[]> {
+async function getSeries(list:SeriesType,page:number): Promise<SeriesListRequest[]> {
   
 
   try {
     const basicUrl = `${url}/tv/${list}`;
 
     const params = new URLSearchParams({
-      page: "1",
+      page: page,
       language: language,
       api_key: key,
     });
