@@ -54,7 +54,7 @@ const SerieGeneralInformation: React.FC<SeriesGeneralInformationProps> = ({
         </div>
         <div className="serieGeneralInformation__text__status">
           <span className="serieGeneralInformation__text__status__span">
-            Status:{" "}
+            Status:
           </span>
           {status}
         </div>
