@@ -6,7 +6,7 @@ interface ImageProps {
   src: string;
   alt: string;
   size: string;
-  className: string;
+  className?: string;
 }
 
 const Image: React.FC<ImageProps> = ({ src, alt, size, className }) => {

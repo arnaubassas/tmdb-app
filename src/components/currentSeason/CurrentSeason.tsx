@@ -3,6 +3,7 @@ import { Season } from "../../interfaces";
 import Card from "../card/Card";
 import Image from "../img/Image";
 import "./currentSeason.scss";
+import { imageUrl } from "../../const";
 
 interface CurrentSeasonProps {
   seasons: Season[];
@@ -19,7 +20,7 @@ const CurrentSeason: React.FC<CurrentSeasonProps> = ({ seasons, name }) => {
           <div className="currentSeasonContent__inside__poster">
             <Image
               className="currentSeasonContent__inside__poster__image"
-              src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${lastSeason[0].poster_path}`}
+              src={`${imageUrl}${lastSeason[0].poster_path}`}
               alt="poster"
               size="small"
             />

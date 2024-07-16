@@ -7,6 +7,7 @@ import Error from "../error/Error";
 import Slider from "../slider/Slider";
 import Card from "../card/Card";
 import Image from "../img/Image";
+import { imageUrl } from "../../const";
 
 interface CastProps {
   id: number;
@@ -41,10 +42,9 @@ const Cast: React.FC<CastProps> = ({ id }) => {
           <Card key={actor.id} size="small">
             <div className="castContent__inside">
               <Image
-                src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${actor.profile_path}`}
+                src={`${imageUrl}${actor.profile_path}`}
                 alt="poster"
                 size="small"
-                className=""
               />
               <div className="castContent__inside__informationActor">
                 <div className="castContent__inside__informationActor__name">

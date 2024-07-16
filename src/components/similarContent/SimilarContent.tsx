@@ -9,6 +9,7 @@ import Card from "../card/Card";
 import { dateModify } from "../../utils";
 import { Link } from "react-router-dom";
 import Image from "../img/Image";
+import { imageUrl } from "../../const";
 
 interface SimilarContentProps {
   id: number;
@@ -36,10 +37,9 @@ const SimilarContent: React.FC<SimilarContentProps> = ({ id }) => {
           <Card key={serie.id} size="small">
             <Link to={`/serie/${serie.id}`} className="similarContent__link">
               <Image
-                src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${serie.poster_path}`}
+                src={`${imageUrl}${serie.poster_path}`}
                 alt="poster"
                 size="small"
-                className=""
               />
               <div className="similarContent__link__informationSerie">
                 <div className="similarContent__link__informationSerie__title">

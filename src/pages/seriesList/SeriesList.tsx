@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import Card from "../../components/card/Card";
 import { dateModify } from "../../utils";
 import Image from "../../components/img/Image";
+import { imageUrl } from "../../const";
 
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
@@ -39,10 +40,9 @@ const SeriesList = () => {
               className="seriesListPage__seriesList__link"
             >
               <Image
-                src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${serie.poster_path}`}
+                src={`${imageUrl}${serie.poster_path}`}
                 alt="poster"
                 size="small"
-                className=""
               />
 
               <div className="seriesListPage__seriesList__link__informationSerie">
