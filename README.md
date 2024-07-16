@@ -20,7 +20,7 @@ src/
 
 ```
 Dentro de src/ también hay los siguientes archivos:
-
+```
 /App.scss          --> archivo scss del layout.
 /App.tsx           --> layout de la página.
 /const.ts          --> archivo con constantes globales de la página en ese caso solo hay el lenguaje y país.
@@ -29,7 +29,7 @@ Dentro de src/ también hay los siguientes archivos:
 /services.ts       --> archivo con las peticiones a la API.
 /utils.ts          --> archivo con funciones reutilizables.
 /theme.scss        --> archivo con variables de scss globales.
-
+```
 ## Procedimiento
 
 El archivo .env es público porque la url era pública y por tanto no servía de nada ocultarlo en el código.
