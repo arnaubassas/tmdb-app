@@ -44,6 +44,20 @@
           font-weight: $bold-weight;
         }
       }
+      @media (max-width: 680px) {
+        &__episodes {
+          padding-bottom: $spacing-s;
+        }
+
+        &__text {
+          padding-bottom: $spacing-m;
+          font-size: 0.8rem;
+        }
+
+        &__score {
+          padding-bottom: $spacing-s;
+        }
+      }
     }
   }
 }
