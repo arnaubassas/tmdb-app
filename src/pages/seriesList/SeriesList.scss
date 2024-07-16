@@ -45,7 +45,8 @@
       color: $fontColor-light;
       font-weight: $bold-weight;
       border-radius: $spacing-s;
-      border: none;
+      border: 1px solid black;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   }
 
