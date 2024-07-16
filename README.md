@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# TMDB APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio trata sobre un aplicación para consultar información detallada de séries de televisión usando la API de TMDB que se puede encontrar en: [Api TMDB](https://developer.themoviedb.org/reference/intro/getting-started).
 
-Currently, two official plugins are available:
+Es un proyecto con react mediante [Vite](https://vitejs.dev/) el proyecto se inicia con $ npm create [vite@latest]((https://vitejs.dev/guide/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Instalación e Inicialización
 
-## Expanding the ESLint configuration
+Para inicializar se debe realizar un pull del repositorio para descargarlo en local. Una vez descargado user `npm i` para instalar todas las dependencias.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para ejecutar la aplicación se ejecutarà el comando `npm run dev` y abrir en el navegador [http://localhost:5173](http://localhost:5173).
 
-- Configure the top-level `parserOptions` property like this:
+## Estructura de carpetas
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
 ```
+src/
+├── components/       # Componentes reutilizables 
+├── img/              # Imágenes úsadas a lo largo de la web
+├── pages/            # Páginas renderizadas por react-router-dom
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+```
+Dentro de src/ también hay los siguientes archivos:
+
+/App.scss          --> archivo scss del layout.
+/App.tsx           --> layout de la página.
+/const.ts          --> archivo con constantes globales de la página en ese caso solo hay el lenguaje y país.
+/interfaces.ts     --> archivo con las interfaces.
+/main.tsx          --> archivo que inicializa la app y donde encontrar las rutas.
+/services.ts       --> archivo con las peticiones a la API.
+/utils.ts          --> archivo con funciones reutilizables.
+/theme.scss        --> archivo con variables de scss globales.
+
+## Procedimiento
+
+El archivo .env es público porque la url era pública y por tanto no servía de nada ocultarlo en el código.
+
+He procedido creando componentes reutilizables como image, slider y card. Esos componentes se van usando a lo largo del código.
+
+También he separado las distintas secciones de las páginas en componentes independientes para hacer más leíble y escalable el código. Si se quisiera añadir un apartado de películas se podría reutilizar gran cantidad de los componentes ya creados.
+
+En el diseño me he basado en tmdb. He dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar.
+
+## Partes que podrían mejorarse
+
+Estos puntos podrían haberse realizado de forma mejor pero debido a que la prueba tenía un tiempo limitado.
+
+- Una slider mediante JS para que incorpora flechas para realizar el scroll horizontal.
+- Tipar los errores de la API
+- Hacer un dropdown para las secciones "popular", "top_rated", "on the air" y "airing today" cuando el diseño pasa a un tamaño para móbil.
+
+## nuevas funcionalidades 
+
+Algunas funcionalidades a las que he tenido que renunciar por límite de tiempo son:
+
+- Una página para elenco entero y uno para todas las temporadas de la serie.
+- Añadir filtro y una barra de search en la página principal para filtrar por género y para buscar las séries por nombre.
+
+
