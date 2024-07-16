@@ -28,10 +28,17 @@ const CurrentSeason: React.FC<CurrentSeasonProps> = ({ seasons, name }) => {
             <div className="currentSeasonContent__inside__information__numberSeason">
               {lastSeason[0].name}
             </div>
-            <div className="currentSeasonContent__inside__information__episodes">{`${lastSeason[0].air_date?.slice(
-              0,
-              4
-            )} · ${lastSeason[0].episode_count} Episodes`}</div>
+            {lastSeason[0].air_date ? (
+              <div className="currentSeasonContent__inside__information__episodes">
+                {`${lastSeason[0].air_date.slice(0, 4)} · ${
+                  lastSeason[0].episode_count
+                } Episodes`}
+              </div>
+            ) : (
+              <div className="currentSeasonContent__inside__information__episodes">
+                Soon
+              </div>
+            )}
             {lastSeason[0] && lastSeason[0].air_date && (
               <div className="currentSeasonContent__inside__information__text">{`Season ${
                 lastSeason[0].season_number
