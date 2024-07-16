@@ -7,6 +7,7 @@ import Error from "../../components/error/Error";
 import Loading from "../../components/loading/Loading";
 import SimilarContent from "../../components/similarContent/SimilarContent";
 import Cast from "../../components/cast/Cast";
+import CurrentSeason from "../../components/currentSeason/CurrentSeason";
 
 const SeriesDetail = () => {
   const [serie, setSerie] = useState<DetailRequest>();
@@ -42,7 +43,7 @@ const SeriesDetail = () => {
       />
 
       <Cast id={serie.id} />
-
+      <CurrentSeason seasons={serie.seasons} name={serie.name} />
       <SimilarContent id={serie.id} />
     </>
   );

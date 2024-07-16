@@ -65,7 +65,7 @@ interface ProductionCountry {
     name: string;
 }
 
-interface Season {
+export interface Season {
     air_date: string | null;
     episode_count: number;
     id: number;

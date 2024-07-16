@@ -16,6 +16,11 @@ const Cast: React.FC<CastProps> = ({ id }) => {
   const [principalCast, setPrincipalCast] = useState<CastRequest[]>();
   const [error, setError] = useState(false);
 
+  // const {response, error, isLoading} = useFetch(
+  //   () => getCastById(id),
+  //   [id]
+  // )
+
   useEffect(() => {
     getCastById(id)
       .then((data) => {
@@ -32,7 +37,7 @@ const Cast: React.FC<CastProps> = ({ id }) => {
       <div className="castContent__title">Series Cast</div>
       <Slider>
         {principalCast.map((actor) => (
-          <Card key={actor.id}>
+          <Card key={actor.id} size="small">
             <div className="castContent__inside">
               <img
                 src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${actor.profile_path}`}

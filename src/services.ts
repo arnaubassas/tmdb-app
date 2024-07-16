@@ -4,7 +4,7 @@ const key = import.meta.env.VITE_TMDB_API_KEY;
 const url = import.meta.env.VITE_TMDB_BASE_URL;
 
 
-type SeriesType =  "airing_today" | "on_the_air" | "popular" | "top_rated";
+export type SeriesType =  "airing_today" | "on_the_air" | "popular" | "top_rated";
 
 
 async function getSeries(list:SeriesType): Promise<SeriesListRequest[]> {

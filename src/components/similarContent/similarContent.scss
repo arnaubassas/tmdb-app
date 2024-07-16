@@ -10,6 +10,7 @@
     scrollbar-width: thin;
   }
   &__title {
+    font-size: $fontSize-m;
     font-weight: $bold-weight;
   }
   &__link {

@@ -32,7 +32,7 @@ const SimilarContent: React.FC<SimilarContentProps> = ({ id }) => {
       <div className="similarContent__title">Similar Suggestions</div>
       <Slider>
         {similar.map((serie) => (
-          <Card key={serie.id}>
+          <Card key={serie.id} size="small">
             <Link to={`/serie/${serie.id}`} className="similarContent__link">
               <img
                 src={`https://media.themoviedb.org/t/p/w440_and_h660_face/${serie.poster_path}`}
