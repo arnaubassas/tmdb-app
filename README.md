@@ -48,7 +48,7 @@ Estos puntos podrían haberse realizado de forma mejor pero debido a que la prue
 - Tipar los errores de la API
 - Hacer un dropdown para las secciones "popular", "top_rated", "on the air" y "airing today" cuando el diseño pasa a un tamaño para móbil.
 
-## nuevas funcionalidades 
+## Nuevas funcionalidades 
 
 Algunas funcionalidades a las que he tenido que renunciar por límite de tiempo son:
 
