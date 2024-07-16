@@ -40,9 +40,9 @@ También he separado las distintas secciones de las páginas en componentes inde
 
 En el diseño me he basado en la web de tmdb. He dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar.
 
-## Partes que podrían mejorarse
+## Partes mejorables
 
-Estos puntos podrían haberse realizado de forma mejor pero debido a que la prueba tenía un tiempo limitado.
+Estos puntos del codigo podrían haberse realizado de forma mejor pero no eran muy críticas y no impedían la ejecución del código:
 
 - Una slider mediante JS para que incorpora flechas para realizar el scroll horizontal.
 - Tipar los errores de la API
