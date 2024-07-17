@@ -5,7 +5,7 @@ import { SeriesListRequest } from "../../interfaces";
 import "./SeriesList.scss";
 import Loading from "../../components/loading/Loading";
 import Error from "../../components/error/Error";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import Card from "../../components/card/Card";
 import { dateModify } from "../../utils";
 import Image from "../../components/img/Image";
@@ -16,14 +16,19 @@ const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [page, setPage] = useState("1");
+  const [page, setPage] = useState(1);
   const [search, setSearch] = useState<string>("");
   const [searchActive, setSearchActive] = useState(false);
+  const location = useLocation();
 
   const { list } = useParams<{ list: SeriesType }>();
 
   useEffect(() => {
-    setIsLoading(true);
+    setPage(1);
+  }, [location]);
+
+  console.log(page);
+  useEffect(() => {
     if (searchActive) {
       getSearch(search)
         .then((data) => {
@@ -35,7 +40,7 @@ const SeriesList = () => {
       if (list) {
         getSeries(list, page)
           .then((data) => {
-            if (page === "1") {
+            if (page === 1) {
               setSeries(data);
             } else {
               setSeries((prevSeries) => [

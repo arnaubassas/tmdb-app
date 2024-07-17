@@ -11,13 +11,14 @@ export type SeriesType =
 
 async function getSeries(
   list: SeriesType,
-  page: string
+  page: number
 ): Promise<SeriesListRequest[]> {
+  const pageService = page.toString();
   try {
     const basicUrl = `${url}/tv/${list}`;
 
     const params = new URLSearchParams({
-      page: page,
+      page: pageService,
       language: language,
       api_key: key,
     });
