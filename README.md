@@ -66,4 +66,4 @@ Algunas funcionalidades a las que he tenido que renunciar por límite de tiempo 
 
 ## web deployada 
 
-[TMDB-APP](https://arnau-bassas-tmdb-app.netlify.app/popular)
+[TMDB-APP](https://arnau-bassas-tmdb-app.netlify.app/)
