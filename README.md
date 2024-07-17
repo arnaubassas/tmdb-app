@@ -38,21 +38,32 @@ He procedido creando componentes reutilizables como image, slider y card. Esos c
 
 También he separado las distintas secciones de las páginas en componentes independientes para hacer más leíble y escalable el código. Si se quisiera añadir un las mismas secciones existentes en séries con películas se podría reutilizar gran cantidad de los componentes ya creados.
 
-En el diseño he dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar. También he hecho media query para que la lista de séries fuera con 2, 4 y 5 columnas porque así quedaban las filas siempre llenas.
+En el diseño he dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar. También he implementado media queries para ajustar el diseño de la pagina 'lista de series' a 2, 4 y 5 columnas, lo que garantiza que las filas siempre se llenen.
+
+## Funcionamiento
+
+Empiezas en la página de lista de séries. Puedes escoger entre 4 listas que están en el header o buscar por nombre a la barra de search. Al final de la página hay un boton para cargar más séries de la lista.
+
+Si haces click alguna de las cards vas a la página de detalle de la série. En la parte superior puedes ver la información general. Seguidamente, se encuentra una slider con el elenco de la série. A continuación, la temporada actual de la série con información de esa. Finalmente, se encuentra un slider con opciones de séries similares a la que se está consultando. En este último caso, las cards también te llevan a la página de detalle de la seríe.
 
 ## Partes mejorables
 
 Estos puntos del codigo podrían haberse realizado de forma mejor pero no eran muy críticas y no impedían la ejecución del código:
 
-- Una slider mediante JS para que incorpora flechas para realizar el scroll horizontal.
-- Tipar los errores de la API
+- Para una web en producción el slider debería incorporar mediante JS flechas para realizar el scroll horizontal.
+- Tipar los errores de la API.
 - Hacer un dropdown para las secciones "popular", "top_rated", "on the air" y "airing today" cuando el diseño pasa a un tamaño para móbil.
+- Realizar una pantalla de Error y Loading más estetica. 
 
 ## Nuevas funcionalidades 
 
 Algunas funcionalidades a las que he tenido que renunciar por límite de tiempo son:
 
 - Una página para elenco entero y uno para todas las temporadas de la serie.
-- Añadir filtro y una barra de search en la página principal para filtrar por género y para buscar las séries por nombre.
+- Añadir filtros en la página principal para filtrar por género por ejemplo.
+- El menú del header reaparezca cuando se escrollea hacia arriba aunque estés a media página y poder tener acceso a sus opciones sin tener que subir hasta arriba de todo.
 
 
+## web deployada 
+
+[TMDB-APP](https://arnau-bassas-tmdb-app.netlify.app/popular)
