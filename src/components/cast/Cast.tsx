@@ -16,17 +16,21 @@ interface CastProps {
 const Cast: React.FC<CastProps> = ({ id }) => {
   const [cast, setCast] = useState<CastRequest[]>();
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getCastById(id)
       .then((data) => {
         setCast(data.slice(0, 15));
       })
-      .catch(() => setError(true));
+      .catch(() => setError(true))
+      .finally(() => setIsLoading(false));
   }, [id]);
 
-  if (error) return <Error />;
-  if (!cast) return <Loading />;
+  if (isLoading) return <Loading />;
+  if (error || !cast) return <Error />;
+
   return (
     <div className="castContent">
       <div className="castContent__title">Series Cast</div>

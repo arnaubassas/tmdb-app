@@ -36,7 +36,7 @@
     padding: $spacing-xl 0;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 300px;
 
     &__button {
       width: 100%;
@@ -48,6 +48,10 @@
       border: 1px solid black;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+  }
+  &__searchBar {
+    width: 300px;
+    padding: $spacing-m 0;
   }
 
   @media (max-width: 800px) {

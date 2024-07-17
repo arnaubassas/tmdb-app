@@ -1,0 +1,16 @@
+@import "../../theme.scss";
+.searchBar {
+  display: flex;
+  border: none;
+  &__input {
+    border: 1px solid black;
+    width: 100%;
+    outline: none;
+    background-color: white;
+    padding: $spacing-s $spacing-s;
+    border-radius: $spacing-s;
+  }
+  &__button {
+    display: none;
+  }
+}
