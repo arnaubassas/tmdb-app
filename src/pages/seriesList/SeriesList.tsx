@@ -15,6 +15,7 @@ import SearchBar from "../../components/searchBar/SearchBar";
 const SeriesList = () => {
   const [series, setSeries] = useState<SeriesListRequest[]>();
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [page, setPage] = useState("1");
   const [search, setSearch] = useState<string>("");
   const [searchActive, setSearchActive] = useState(false);
@@ -22,12 +23,14 @@ const SeriesList = () => {
   const { list } = useParams<{ list: SeriesType }>();
 
   useEffect(() => {
+    setIsLoading(true);
     if (searchActive) {
       getSearch(search)
         .then((data) => {
           setSeries(data);
         })
-        .catch(() => setError(true));
+        .catch(() => setError(true))
+        .finally(() => setIsLoading(false));
     } else {
       if (list) {
         getSeries(list, page)
@@ -41,22 +44,19 @@ const SeriesList = () => {
               ]);
             }
           })
-          .catch(() => setError(true));
+          .catch(() => setError(true))
+          .finally(() => setIsLoading(false));
       }
     }
   }, [list, page, search, searchActive]);
 
-  if (error) return <Error />;
-  if (!series) return <Loading />;
+  if (isLoading) return <Loading />;
+  if (error || !series) return <Error />;
 
   return (
     <div className="seriesListPage">
       <div className="seriesListPage__searchBar">
-        <SearchBar
-          search={search}
-          setSearch={setSearch}
-          setSearchActive={setSearchActive}
-        />
+        <SearchBar setSearch={setSearch} setSearchActive={setSearchActive} />
       </div>
       <div className="seriesListPage__seriesList">
         {series.map((serie) => (

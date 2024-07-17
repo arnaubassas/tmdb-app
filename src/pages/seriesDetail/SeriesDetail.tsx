@@ -12,21 +12,24 @@ import CurrentSeason from "../../components/currentSeason/CurrentSeason";
 const SeriesDetail = () => {
   const [serie, setSerie] = useState<DetailRequest>();
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const { id } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
     if (id) {
       getSerieById(id)
         .then((data) => {
           setSerie(data);
         })
-        .catch(() => setError(true));
+        .catch(() => setError(true))
+        .finally(() => setIsLoading(false));
     }
   }, [id]);
 
-  if (error) return <Error />;
-  if (!serie) return <Loading />;
+  if (isLoading) return <Loading />;
+  if (error || !serie) return <Error />;
 
   return (
     <>

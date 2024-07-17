@@ -18,17 +18,20 @@ interface SimilarContentProps {
 const SimilarContent: React.FC<SimilarContentProps> = ({ id }) => {
   const [similar, setSimilar] = useState<SeriesListRequest[]>();
   const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getSimilarById(id)
       .then((data) => {
         setSimilar(data);
       })
-      .catch(() => setError(true));
+      .catch(() => setError(true))
+      .finally(() => setIsLoading(false));
   }, [id]);
 
-  if (error) return <Error />;
-  if (!similar) return <Loading />;
+  if (isLoading) return <Loading />;
+  if (error || !similar) return <Error />;
   return (
     <div className="similarContent">
       <div className="similarContent__title">Similar Suggestions</div>
