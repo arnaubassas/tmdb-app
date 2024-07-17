@@ -1,24 +1,22 @@
-import { useState } from "react";
 import "./searchBar.scss";
 
 interface SearchBarProps {
+  search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   setSearchActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const SearchBar: React.FC<SearchBarProps> = ({
+  search,
   setSearch,
   setSearchActive,
 }) => {
-  const [input, setInput] = useState("");
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(event.target.value);
+    setSearch(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (input !== "") {
-      setSearch(input);
+    if (search !== "") {
       setSearchActive(true);
     }
   };
@@ -27,7 +25,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     <form className="searchBar" onSubmit={handleSubmit}>
       <input
         type="text"
-        value={input}
+        value={search}
         onChange={handleChange}
         placeholder="Search"
         className="searchBar__input"

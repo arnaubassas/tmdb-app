@@ -25,9 +25,11 @@ const SeriesList = () => {
 
   useEffect(() => {
     setPage(1);
+    setSeries([]);
+    setSearchActive(false);
+    setSearch("");
   }, [location]);
 
-  console.log(page);
   useEffect(() => {
     if (searchActive) {
       getSearch(search)
@@ -61,7 +63,11 @@ const SeriesList = () => {
   return (
     <div className="seriesListPage">
       <div className="seriesListPage__searchBar">
-        <SearchBar setSearch={setSearch} setSearchActive={setSearchActive} />
+        <SearchBar
+          search={search}
+          setSearch={setSearch}
+          setSearchActive={setSearchActive}
+        />
       </div>
       <div className="seriesListPage__seriesList">
         {series.map((serie) => (
