@@ -36,7 +36,7 @@ El archivo `.env` es público porque la URL era pública y no tenía sentido ocu
 
 He procedido a crear componentes reutilizables como `Image`, `Slider` y `Card`. Esos componentes se utilizan a lo largo del código.
 
-También he separado las distintas secciones de las páginas en componentes independientes para hacer más legible y escalable el código. Si se quisiera añadir las mismas secciones existentes en series con películas se podría reutilizar gran cantidad de los componentes ya creados.
+También he separado las distintas secciones de las páginas en componentes independientes para hacer más legible y escalable el código. Si se deseara añadir las mismas secciones que existen en la parte de series pero para películas, se podría reutilizar gran parte de los componentes ya creados.
 
 En el diseño he dejado en la parte derecha del header una sección dedicada al usuario con una foto de avatar. También he implementado media queries para ajustar el diseño de la pagina "lista de series" a 2, 4 y 5 columnas, lo que garantiza que las filas siempre se llenen.
 
