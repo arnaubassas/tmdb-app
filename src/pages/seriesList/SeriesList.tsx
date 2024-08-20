@@ -18,7 +18,6 @@ const SeriesList = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState<string>("");
-  const [searchActive, setSearchActive] = useState(false);
   const location = useLocation();
 
   const { list } = useParams<{ list: SeriesType }>();
@@ -26,12 +25,12 @@ const SeriesList = () => {
   useEffect(() => {
     setPage(1);
     setSeries([]);
-    setSearchActive(false);
+
     setSearch("");
   }, [location]);
 
   useEffect(() => {
-    if (searchActive) {
+    if (search) {
       getSearch(search)
         .then((data) => {
           setSeries(data);
@@ -39,23 +38,18 @@ const SeriesList = () => {
         .catch(() => setError(true))
         .finally(() => setIsLoading(false));
     } else {
-      if (list) {
-        getSeries(list, page)
-          .then((data) => {
-            if (page === 1) {
-              setSeries(data);
-            } else {
-              setSeries((prevSeries) => [
-                ...(prevSeries || []),
-                ...(data || []),
-              ]);
-            }
-          })
-          .catch(() => setError(true))
-          .finally(() => setIsLoading(false));
-      }
+      getSeries(list!, page)
+        .then((data) => {
+          if (page === 1) {
+            setSeries(data);
+          } else {
+            setSeries((prevSeries) => [...(prevSeries || []), ...(data || [])]);
+          }
+        })
+        .catch(() => setError(true))
+        .finally(() => setIsLoading(false));
     }
-  }, [list, page, search, searchActive]);
+  }, [list, page, search]);
 
   if (isLoading) return <Loading />;
   if (error || !series) return <Error />;
@@ -63,11 +57,7 @@ const SeriesList = () => {
   return (
     <div className="seriesListPage">
       <div className="seriesListPage__searchBar">
-        <SearchBar
-          search={search}
-          setSearch={setSearch}
-          setSearchActive={setSearchActive}
-        />
+        <SearchBar search={search} setSearch={setSearch} />
       </div>
       <div className="seriesListPage__seriesList">
         {series.map((serie) => (
